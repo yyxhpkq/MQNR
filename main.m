@@ -4,9 +4,10 @@
  blocksizerow    = 96;
  blocksizecol    = 96;
 
- 
- readpath_MS=('E:\work3\MQNR\Image\MS.mat');
- readpath_PAN=('E:\work3\MQNR\Image\PAN.mat');
+ fus_med={'1_PCA','2_IHS','3_BDSD','4_GS','5_ATWT_M2','6_MTF_GLP_CBD'};
+
+ readpath_MS=('E:\work3\MQNR\Image\Mixed\MS.mat');
+ readpath_PAN=('E:\work3\MQNR\Image\Mixed\PAN.mat');
  
  I_MS  =importdata(readpath_MS); 
  I_MS  =double(I_MS);
@@ -15,7 +16,7 @@
  I_PAN  =importdata(readpath_PAN); 
  I_PAN  =double(I_PAN);
  
- readpath_F=('E:\work3\MQNR\Image\3_BDSD.mat');
+ readpath_F=('E:\work3\MQNR\Image\Mixed\6_MTF_GLP_CBD.mat');
  
  Image_F  =importdata(readpath_F); 
  Image_F  =double(Image_F);
