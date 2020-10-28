@@ -1,0 +1,1 @@
+the large remote sensing image dataset form "A Large-Scale Remote Sensing Database for Subjective and Objective Quality Assessment of Pansharpened Images".
