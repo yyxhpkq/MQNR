@@ -8,6 +8,8 @@ function  T=spatfeature(image)
 % 
 % 
 % Gray=mat2gray(image).*255;
+
+%%
 Gray=image;
 [M,N,~] = size(Gray);
 
@@ -62,16 +64,16 @@ Ux = H;      Uy = H;
 deltaX= H;  deltaY = H;
 C =H;
 for n = 1:4
-    E(n) = sum(sum(P(:,:,n).^2)); %%能量
+    E(n) = sum(sum(P(:,:,n).^2)); %%ENG
     for i = 1:16
         for j = 1:16
             if P(i,j,n)~=0
-                H(n) = -P(i,j,n)*log(P(i,j,n))+H(n); %%熵
+                H(n) = -P(i,j,n)*log(P(i,j,n))+H(n); %%ENT
             end
-            I(n) = (i-j)^2*P(i,j,n)+I(n);  %%惯性矩
+            I(n) = (i-j)^2*P(i,j,n)+I(n);  %%
            
-            Ux(n) = i*P(i,j,n)+Ux(n); %相关性中μx
-            Uy(n) = j*P(i,j,n)+Uy(n); %相关性中μy
+            Ux(n) = i*P(i,j,n)+Ux(n); %μx
+            Uy(n) = j*P(i,j,n)+Uy(n); %μy
         end
     end
 end
@@ -79,12 +81,12 @@ end
 for n = 1:4
     for i = 1:16
         for j = 1:16
-            deltaX(n) = (i-Ux(n))^2*P(i,j,n)+deltaX(n); %相关性中σx
-            deltaY(n) = (j-Uy(n))^2*P(i,j,n)+deltaY(n); %相关性中σy
+            deltaX(n) = (i-Ux(n))^2*P(i,j,n)+deltaX(n); %σx
+            deltaY(n) = (j-Uy(n))^2*P(i,j,n)+deltaY(n); %σy
             C(n) = i*j*P(i,j,n)+C(n);             
         end
     end
-    C(n) = (C(n)-Ux(n)*Uy(n))/deltaX(n)/deltaY(n); %相关性   
+    C(n) = (C(n)-Ux(n)*Uy(n))/deltaX(n)/deltaY(n);   
 end
 
 a1 = mean(E)   ;
