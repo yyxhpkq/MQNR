@@ -12,6 +12,6 @@ function  [mu_prisparam,cov_prisparam]  =primodel(I_PAN,blocksizerow,blocksizeco
      
      feat_all=[feat_spat_all_p,feat_spec_all];
  
-     mu_prisparam     = nanmean(feat_all);
-     cov_prisparam    = nancov(feat_all);
+     mu_prisparam     = nanmean([feat_all(:,:)]);
+     cov_prisparam    = nancov([feat_all(:,:)]);
 end
