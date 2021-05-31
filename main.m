@@ -6,8 +6,8 @@
 
  fus_med={'1_PCA','2_IHS','3_BDSD','4_GS','5_ATWT_M2','6_MTF_GLP_CBD'};
 
- readpath_MS=('\Image\Buildings\MS.mat');
- readpath_PAN=('\Image\Buildings\PAN.mat');
+ readpath_MS=('.\Image\Buildings\MS.mat');
+ readpath_PAN=('.\Image\Buildings\PAN.mat');
  
  I_MS  =importdata(readpath_MS); 
  I_MS  =double(I_MS);
@@ -16,7 +16,7 @@
  I_PAN  =importdata(readpath_PAN); 
  I_PAN  =double(I_PAN);
  
- readpath_F=('\Image\Buildings\1_PCA.mat');
+ readpath_F=('.\Image\Buildings\1_PCA.mat');
  
  Image_F  =importdata(readpath_F); 
  Image_F  =double(Image_F);
